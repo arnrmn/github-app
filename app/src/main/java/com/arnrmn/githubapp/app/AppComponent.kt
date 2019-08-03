@@ -7,7 +7,11 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(
-    modules = [AndroidSupportInjectionModule::class, ActivityContributorsModule::class]
+    modules = [
+        AppModule::class,
+        AndroidSupportInjectionModule::class,
+        ActivityContributorsModule::class
+    ]
 )
 interface AppComponent : AndroidInjector<GithubApp> {
     @Component.Factory

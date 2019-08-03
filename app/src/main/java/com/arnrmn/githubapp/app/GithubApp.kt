@@ -8,14 +8,14 @@ import javax.inject.Inject
 
 class GithubApp : Application(), HasAndroidInjector {
     @Inject
-    lateinit var injector: DispatchingAndroidInjector<Any>
+    lateinit var androidInjector: DispatchingAndroidInjector<Any>
 
     override fun onCreate() {
         super.onCreate()
-        DaggerAppComponent.factory()
-            .create(this)
-            .inject(this)
+        DaggerAppComponent.factory().create(this).inject(this)
     }
 
-    override fun androidInjector(): AndroidInjector<Any> = injector
+    override fun androidInjector(): AndroidInjector<Any>? {
+        return androidInjector
+    }
 }
