@@ -1,14 +1,12 @@
 package com.arnrmn.githubapp.main
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import com.arnrmn.githubapp.R
-import dagger.android.AndroidInjection
+import com.arnrmn.githubapp.utils.android.BaseActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
