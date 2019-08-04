@@ -2,6 +2,7 @@ package com.arnrmn.githubapp.repositories
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import com.arnrmn.githubapp.R
 import com.arnrmn.githubapp.utils.android.BaseFragment
 import com.arnrmn.githubapp.utils.android.ViewModelFactory
@@ -22,6 +23,7 @@ class RepositoriesFragment : BaseFragment() {
         viewModel.repositories.observe(::showRepositories)
         viewModel.error.observe(::showError)
         viewModel.isLoading.observe(::showLoadingIndicator)
+        viewModel.selectedRepository.observe(::showDetails)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -36,6 +38,11 @@ class RepositoriesFragment : BaseFragment() {
 
     private fun showLoadingIndicator(isLoading: Boolean) {
         refreshLayout.isRefreshing = isLoading
+    }
+
+    private fun showDetails(repository: Repository) {
+        val action = RepositoriesFragmentDirections.actionRepositoriesFragmentToDetailsFragment(repository)
+        findNavController().navigate(action)
     }
 
 }

@@ -17,7 +17,7 @@
         android:name="com.arnrmn.githubapp.details.DetailsFragment"
         android:label="DetailsFragment">
         <argument
-            android:name="repositoryName"
-            app:argType="string"/>
+            android:name="repository"
+            app:argType="com.arnrmn.usecase.repositories.Repository"/>
     </fragment>
 </navigation>

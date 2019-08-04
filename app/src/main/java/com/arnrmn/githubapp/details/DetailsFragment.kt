@@ -13,7 +13,7 @@ class DetailsFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        repoTextView.text = args.repositoryName
+        repoTextView.text = args.repository.name
 
     }
 }
