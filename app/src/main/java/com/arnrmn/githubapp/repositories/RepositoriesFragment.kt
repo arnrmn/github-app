@@ -24,12 +24,18 @@ class RepositoriesFragment : BaseFragment() {
         viewModel.isLoading.observe(::showLoadingIndicator)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        refreshLayout.setOnRefreshListener { viewModel.onRefreshRequested() }
+    }
+
     private fun showRepositories(repositories: List<Repository>) {
         Log.d("Repo", repositories.size.toString())
     }
 
     private fun showLoadingIndicator(isLoading: Boolean) {
         progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+        if (!isLoading) refreshLayout.isRefreshing = false
     }
 
 }
