@@ -1,0 +1,10 @@
+query repositories {
+    organization(login: "toptal") {
+        repositories(first: 100) {
+            nodes {
+                name
+                url
+            }
+        }
+    }
+}
