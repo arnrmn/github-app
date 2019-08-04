@@ -1,10 +1,10 @@
 package com.arnrmn.githubapp.main
 
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.arnrmn.githubapp.R
-import com.arnrmn.githubapp.utils.android.BaseActivity
 
-class MainActivity : BaseActivity() {
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
