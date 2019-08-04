@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.apollographql.android'
 apply plugin: 'kotlin-android'
 
 android {
@@ -12,20 +11,10 @@ android {
     }
 }
 
-apollo {
-    customTypeMapping = [
-            "URI": "java.net.URI"
-    ]
-}
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
-    implementation 'com.apollographql.apollo:apollo-runtime:1.0.2'
-    implementation 'com.apollographql.apollo:apollo-rx2-support:1.0.2'
-    compileOnly 'org.jetbrains:annotations:13.0'
-    testCompileOnly 'org.jetbrains:annotations:13.0'
+    implementation "io.reactivex.rxjava2:rxjava:2.2.11"
 
     testImplementation 'junit:junit:4.12'
 }
