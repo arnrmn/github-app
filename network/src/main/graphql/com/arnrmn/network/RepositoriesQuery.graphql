@@ -1,0 +1,22 @@
+query repositories($organization: String!, $limit: Int) {
+    organization(login: $organization) {
+        repositories(first: $limit) {
+            nodes {
+                name
+                url
+                openIssues: issues(states: OPEN) {
+                    totalCount
+                }
+                closedIssues: issues(states: CLOSED) {
+                    totalCount
+                }
+                closedPullRequests: pullRequests(states: CLOSED) {
+                    totalCount
+                }
+                openPullRequests: pullRequests(states: OPEN) {
+                    totalCount
+                }
+            }
+        }
+    }
+}

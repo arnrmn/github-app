@@ -4,8 +4,8 @@ import com.apollographql.apollo.ApolloClient
 import com.apollographql.apollo.api.Input
 import com.apollographql.apollo.api.Response
 import com.apollographql.apollo.rx2.Rx2Apollo
-import com.arnrmn.githubapp.RepositoriesQuery
 import com.arnrmn.network.Api
+import com.arnrmn.network.RepositoriesQuery
 import com.arnrmn.usecase.repositories.RepositoriesProvider
 import com.arnrmn.usecase.repositories.Repository
 import io.reactivex.Single

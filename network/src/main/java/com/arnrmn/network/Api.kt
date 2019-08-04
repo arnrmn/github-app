@@ -1,7 +1,7 @@
 package com.arnrmn.network
 
 import com.apollographql.apollo.ApolloClient
-import com.arnrmn.githubapp.type.CustomType
+import com.arnrmn.network.type.CustomType
 
 internal object Api {
     private const val BASE_URL = "https://api.github.com/graphql"
