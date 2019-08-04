@@ -10,11 +10,7 @@
         android:label="RepositoriesFragment">
         <action
             android:id="@+id/action_repositoriesFragment_to_detailsFragment"
-            app:destination="@id/detailsFragment">
-            <argument
-                android:name="repositoryName"
-                app:argType="string"/>
-        </action>
+            app:destination="@id/detailsFragment"/>
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
