@@ -1,10 +1,10 @@
-package com.arnrmn.githubapp.utils.network
+package com.arnrmn.network
 
 import com.apollographql.apollo.response.CustomTypeAdapter
 import com.apollographql.apollo.response.CustomTypeValue
 import java.net.URI
 
-object UriAdapter : CustomTypeAdapter<URI> {
+internal object UriAdapter : CustomTypeAdapter<URI> {
     override fun encode(value: URI): CustomTypeValue<*> {
         return CustomTypeValue.GraphQLString(value.toString())
     }

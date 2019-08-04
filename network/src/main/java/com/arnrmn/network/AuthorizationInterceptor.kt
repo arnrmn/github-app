@@ -1,11 +1,11 @@
-package com.arnrmn.githubapp.utils.network
+package com.arnrmn.network
 
 import com.apollographql.apollo.interceptor.ApolloInterceptor
 import com.apollographql.apollo.interceptor.ApolloInterceptorChain
 import com.apollographql.apollo.request.RequestHeaders
 import java.util.concurrent.Executor
 
-object AuthorizationInterceptor : ApolloInterceptor {
+internal object AuthorizationInterceptor : ApolloInterceptor {
     override fun interceptAsync(
         request: ApolloInterceptor.InterceptorRequest,
         chain: ApolloInterceptorChain,
