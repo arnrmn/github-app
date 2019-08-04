@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.apollographql.android'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
@@ -35,6 +36,10 @@ dependencies {
     kapt 'com.google.dagger:dagger-compiler:2.24'
 
     implementation "androidx.lifecycle:lifecycle-extensions:2.0.0"
+
+    implementation 'com.apollographql.apollo:apollo-runtime:1.0.2'
+    compileOnly 'org.jetbrains:annotations:13.0'
+    testCompileOnly 'org.jetbrains:annotations:13.0'
 
     testImplementation "androidx.arch.core:core-testing:2.0.1"
     testImplementation 'junit:junit:4.12'
