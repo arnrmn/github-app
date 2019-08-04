@@ -12,13 +12,19 @@ class RepositoriesViewModel @Inject constructor(
 ) : BaseViewModel() {
 
     private val _repositories = MutableLiveData<List<Repository>>()
+    private val _isLoading: MutableLiveData<Boolean> = MutableLiveData()
+
     val repositories: LiveData<List<Repository>> = _repositories
+    val isLoading: LiveData<Boolean> = _isLoading
 
     init {
         loadRepositories()
     }
 
     private fun loadRepositories() {
-        repositoriesUseCase.getRepositories().observe(_repositories::postValue)
+        repositoriesUseCase.getRepositories()
+            .doOnSubscribe { _isLoading.postValue(true) }
+            .doOnEvent { _, _ -> _isLoading.postValue(false) }
+            .observe(_repositories::postValue)
     }
 }
