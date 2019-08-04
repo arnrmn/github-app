@@ -20,6 +20,7 @@ apollo {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(":usecase")
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     implementation 'com.apollographql.apollo:apollo-runtime:1.0.2'
