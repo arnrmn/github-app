@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">GithubApp</string>
+    <string name="open_issues_label">Open Issues:</string>
+    <string name="closed_issues_label">Closed Issues:</string>
+    <string name="open_pull_requests_label">Open Pull Requests:</string>
+    <string name="closed_pull_requests_label">Closed Pull Requests</string>
 </resources>

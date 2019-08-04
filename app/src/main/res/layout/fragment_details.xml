@@ -1,17 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_margin="16dp">
 
     <TextView
+        android:id="@+id/openIssuesLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This is Details screen"/>
+        android:text="@string/open_issues_label"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:id="@+id/repoTextView"
+        android:id="@+id/closedIssuesLabel"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="@string/closed_issues_label"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        app:layout_constraintStart_toStartOf="@+id/openIssuesLabel"
+        app:layout_constraintTop_toBottomOf="@+id/openIssuesLabel"/>
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/openPullRequestsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:text="@string/open_pull_requests_label"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        app:layout_constraintStart_toStartOf="@+id/closedIssuesLabel"
+        app:layout_constraintTop_toBottomOf="@+id/closedIssuesLabel"/>
+
+    <TextView
+        android:id="@+id/closedPullRequestsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/closed_pull_requests_label"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        app:layout_constraintStart_toStartOf="@+id/openPullRequestsLabel"
+        app:layout_constraintTop_toBottomOf="@+id/openPullRequestsLabel"/>
+
+    <TextView
+        android:id="@+id/openIssuesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/openIssuesLabel"
+        tools:text="50"/>
+
+    <TextView
+        android:id="@+id/closedIssuesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/closedIssuesLabel"
+        tools:text="50"/>
+
+    <TextView
+        android:id="@+id/openPullRequestsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/openPullRequestsLabel"
+        tools:text="50"/>
+
+    <TextView
+        android:id="@+id/closedPullRequestsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/closedPullRequestsLabel"
+        tools:text="50"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

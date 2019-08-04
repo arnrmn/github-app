@@ -13,7 +13,11 @@ class DetailsFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        repoTextView.text = args.repository.name
-
+        val repository = args.repository
+        activity?.title = repository.name
+        openIssuesTextView.text = repository.openIssues.toString()
+        closedIssuesTextView.text = repository.closedIssues.toString()
+        openPullRequestsTextView.text = repository.openPullRequests.toString()
+        closedPullRequestsTextView.text = repository.closedPullRequests.toString()
     }
 }

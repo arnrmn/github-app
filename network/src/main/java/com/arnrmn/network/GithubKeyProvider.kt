@@ -1,7 +1,7 @@
 package com.arnrmn.network
 
+//This is dummy implementation an in real world scenario it should be implemented differently
 class GithubKeyProvider(decoder: KeyDecoder = KeyDecoder) {
-
     val key = decoder.decode(KEY)
 
     companion object {

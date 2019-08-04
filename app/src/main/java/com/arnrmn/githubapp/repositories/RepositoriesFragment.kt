@@ -28,6 +28,7 @@ class RepositoriesFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        activity?.title = getString(R.string.app_name)
         refreshLayout.setOnRefreshListener { viewModel.onRefreshRequested() }
         repositoriesRecyclerView.adapter = adapter
     }
