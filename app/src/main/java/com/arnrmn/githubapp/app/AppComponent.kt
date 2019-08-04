@@ -1,5 +1,6 @@
 package com.arnrmn.githubapp.app
 
+import com.arnrmn.githubapp.utils.usecases.UseCasesModule
 import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
@@ -10,7 +11,8 @@ import javax.inject.Singleton
     modules = [
         AppModule::class,
         AndroidSupportInjectionModule::class,
-        ContributorsModule::class
+        ContributorsModule::class,
+        UseCasesModule::class
     ]
 )
 interface AppComponent : AndroidInjector<GithubApp> {
