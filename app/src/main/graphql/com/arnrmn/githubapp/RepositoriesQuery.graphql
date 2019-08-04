@@ -1,6 +1,6 @@
-query repositories {
-    organization(login: "toptal") {
-        repositories(first: 100) {
+query repositories($organization: String!, $limit: Int) {
+    organization(login: $organization) {
+        repositories(first: $limit) {
             nodes {
                 name
                 url
