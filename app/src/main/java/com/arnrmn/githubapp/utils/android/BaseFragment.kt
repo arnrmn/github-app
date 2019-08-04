@@ -10,6 +10,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProviders
+import com.google.android.material.snackbar.Snackbar
 import dagger.android.support.AndroidSupportInjection
 
 abstract class BaseFragment : Fragment() {
@@ -29,6 +30,10 @@ abstract class BaseFragment : Fragment() {
 
     protected inline fun <reified T> LiveData<T>.observe(crossinline action: (T) -> Unit) {
         observe(this@BaseFragment, Observer { data -> data?.let(action) })
+    }
+
+    protected fun showError(message: String) {
+        view?.let { view -> Snackbar.make(view, message, Snackbar.LENGTH_LONG).show() }
     }
 
     protected abstract val layoutId: Int
