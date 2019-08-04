@@ -10,15 +10,6 @@ android {
         versionCode 1
         versionName "1.0"
     }
-    buildTypes {
-        debug {
-            buildConfigField 'String', "ApiKey", '"d3a6457df330f963eb51e3f37966ec9acbf0e0f4"'
-        }
-
-        release {
-            buildConfigField 'String', "ApiKey", "d3a6457df330f963eb51e3f37966ec9acbf0e0f4"
-        }
-    }
 }
 
 apollo {

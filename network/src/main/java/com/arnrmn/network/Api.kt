@@ -9,7 +9,7 @@ internal object Api {
     val client: ApolloClient by lazy {
         ApolloClient.builder()
             .serverUrl(BASE_URL)
-            .addApplicationInterceptor(AuthorizationInterceptor)
+            .addApplicationInterceptor(AuthorizationInterceptor())
             .addCustomTypeAdapter(CustomType.URI, UriAdapter)
             .build()
     }
