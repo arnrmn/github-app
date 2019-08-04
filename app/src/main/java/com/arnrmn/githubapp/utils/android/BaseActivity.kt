@@ -12,8 +12,4 @@ abstract class BaseActivity : AppCompatActivity() {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
     }
-
-    protected inline fun <reified T : ViewModel> viewModel(factory: ViewModelFactory<T>): Lazy<T> {
-        return lazy { ViewModelProviders.of(this, factory).get(T::class.java) }
-    }
 }
