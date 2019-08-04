@@ -13,7 +13,7 @@ class UseCasesModule {
 
         @Provides
         @JvmStatic
-        fun provideReposProvider() = NetworkRepositoriesProvider()
+        fun provideReposProvider(): RepositoriesProvider = NetworkRepositoriesProvider()
 
         @Provides
         @JvmStatic
