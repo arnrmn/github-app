@@ -35,8 +35,7 @@ class RepositoriesFragment : BaseFragment() {
     }
 
     private fun showLoadingIndicator(isLoading: Boolean) {
-        progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
-        if (!isLoading) refreshLayout.isRefreshing = false
+        refreshLayout.isRefreshing = isLoading
     }
 
 }
