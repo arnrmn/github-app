@@ -25,6 +25,10 @@ class RepositoriesViewModel @Inject constructor(
         loadRepositories()
     }
 
+    fun onRepositorySelected(repository: Repository) {
+
+    }
+
     private fun loadRepositories() {
         repositoriesUseCase.getRepositories()
             .doOnSubscribe { _isLoading.postValue(true) }

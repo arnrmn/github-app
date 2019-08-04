@@ -1,7 +1,6 @@
 package com.arnrmn.githubapp.repositories
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import com.arnrmn.githubapp.R
 import com.arnrmn.githubapp.utils.android.BaseFragment
@@ -14,6 +13,7 @@ class RepositoriesFragment : BaseFragment() {
     @Inject
     lateinit var factory: ViewModelFactory<RepositoriesViewModel>
     private val viewModel: RepositoriesViewModel by lazy { viewModel(factory) }
+    private val adapter = RepositoriesAdapter { repository -> viewModel.onRepositorySelected(repository) }
 
     override val layoutId = R.layout.fragment_repositories
 
@@ -27,10 +27,11 @@ class RepositoriesFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         refreshLayout.setOnRefreshListener { viewModel.onRefreshRequested() }
+        repositoriesRecyclerView.adapter = adapter
     }
 
     private fun showRepositories(repositories: List<Repository>) {
-        Log.d("Repo", repositories.size.toString())
+        adapter.update(repositories)
     }
 
     private fun showLoadingIndicator(isLoading: Boolean) {
