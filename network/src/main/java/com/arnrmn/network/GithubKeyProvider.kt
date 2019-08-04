@@ -1,6 +1,6 @@
 package com.arnrmn.network
 
-//This is dummy implementation an in real world scenario it should be implemented differently
+//This is just a dummy implementation. Real world case should not be implemented like this.
 class GithubKeyProvider(decoder: KeyDecoder = KeyDecoder) {
     val key = decoder.decode(KEY)
 
