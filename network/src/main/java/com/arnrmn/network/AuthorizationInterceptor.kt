@@ -15,7 +15,7 @@ internal object AuthorizationInterceptor : ApolloInterceptor {
         val authRequest = request.toBuilder()
             .requestHeaders(
                 RequestHeaders.builder()
-                    .addHeader("Authorization", "bearer 818102ea26b6b4245dd174bf781b178ff6724a1f")
+                    .addHeader("Authorization", "bearer ${BuildConfig.ApiKey}")
                     .build()
             ).build()
         chain.proceedAsync(authRequest, dispatcher, callBack)
