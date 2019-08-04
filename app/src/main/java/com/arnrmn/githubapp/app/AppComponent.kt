@@ -1,5 +1,6 @@
 package com.arnrmn.githubapp.app
 
+import com.arnrmn.githubapp.utils.network.NetworkModule
 import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
@@ -10,7 +11,8 @@ import javax.inject.Singleton
     modules = [
         AppModule::class,
         AndroidSupportInjectionModule::class,
-        ActivityContributorsModule::class
+        ActivityContributorsModule::class,
+        NetworkModule::class
     ]
 )
 interface AppComponent : AndroidInjector<GithubApp> {

@@ -44,6 +44,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:2.0.0"
 
     implementation 'com.apollographql.apollo:apollo-runtime:1.0.2'
+    implementation 'com.apollographql.apollo:apollo-rx2-support:1.0.2'
     compileOnly 'org.jetbrains:annotations:13.0'
     testCompileOnly 'org.jetbrains:annotations:13.0'
 
